@@ -1,0 +1,7 @@
+kernel/arch/arm/plat-iproc/../../../../../bcmdrivers/vs_gpio_mdio/vs_gpio_mdio.ko
+kernel/arch/arm/plat-iproc/../../../../../bcmdrivers/vs_gpio_cfg/vs_gpio_cfg.ko
+kernel/arch/arm/plat-iproc/../../../../../bcmdrivers/vs_watchdog/vs_watchdog.ko
+kernel/arch/arm/plat-iproc/../../../../../bcmdrivers/vs_rtc/vs_rtc.ko
+kernel/arch/arm/plat-iproc/../../../../../bcmdrivers/vs_kparam_cfg/vs_kparam_cfg.ko
+kernel/crypto/aes_generic.ko
+kernel/crypto/ansi_cprng.ko

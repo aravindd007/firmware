@@ -1,0 +1,30 @@
+#!/bin/sh
+# Start the driver modules....
+# created by lijin.cao on 20141105
+
+case "$1" in
+  start)
+ 	echo "Loading drivers and kernel modules..."
+	test -e /lib/modules/linux-kernel-bde.ko && insmod /lib/modules/linux-kernel-bde.ko
+	test -e /lib/modules/linux-user-bde.ko   && insmod /lib/modules/linux-user-bde.ko
+	test -e /lib/modules/linux-uk-proxy.ko   && insmod /lib/modules/linux-uk-proxy.ko
+	test -e /lib/modules/linux-bcm-knet.ko   && insmod /lib/modules/linux-bcm-knet.ko
+	test -e /lib/modules/bcmdrivers/vs_rtc/vs_rtc.ko             && insmod /lib/modules/bcmdrivers/vs_rtc/vs_rtc.ko
+	test -e /lib/modules/bcmdrivers/vs_gpio_mdio/vs_gpio_mdio.ko && insmod /lib/modules/bcmdrivers/vs_gpio_mdio/vs_gpio_mdio.ko
+	test -e /lib/modules/bcmdrivers/vs_kparam_cfg/vs_kparam_cfg.ko   && insmod /lib/modules/bcmdrivers/vs_kparam_cfg/vs_kparam_cfg.ko
+	test -e /lib/modules/bcmdrivers/vs_gpio_cfg/vs_gpio_cfg.ko   && insmod /lib/modules/bcmdrivers/vs_gpio_cfg/vs_gpio_cfg.ko
+	test -e /lib/modules/bcmdrivers/vs_watchdog/vs_watchdog.ko   && insmod /lib/modules/bcmdrivers/vs_watchdog/vs_watchdog.ko
+	#test -e /lib/modules/bcmdrivers/chr-encrypt/chr-encrypt.ko && insmod /lib/modules/bcmdrivers/chr-encrypt/chr-encrypt.ko
+	exit 0
+	;;
+  stop)
+	echo "removing vs_drivers not implemented yet..."
+	exit 1
+	;;
+  *)
+	echo "vs_drivers: unrecognized option $1"
+	echo "Usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+

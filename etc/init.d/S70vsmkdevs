@@ -1,0 +1,27 @@
+#!/bin/sh
+# make dev node....
+# created by lijin.cao on 20141122
+
+case "$1" in
+  start)
+	echo "Loading device nodes..."
+	mknod /dev/linux-bcm-knet c 122 0
+	mknod /dev/linux-user-bde c 126 0
+	mknod /dev/linux-kernel-bde c 127 0
+	mknod /dev/vs_gpio_mdio c 51 0
+	mknod /dev/vs_kparam_cfg  c 56 0
+	mknod /dev/vs_gpio_cfg  c 57 0
+	mknod /dev/vs_watchdog  c 58 0
+	mknod /dev/vs_rtc c 121 0
+	exit 0
+	;;
+  stop)
+	echo "removing vs_devnode not implemented yet..."
+	exit 1
+	;;
+  *)
+	echo "Usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+

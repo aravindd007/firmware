@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Start the driver modules....
+#
+
+case "$1" in
+  start)
+ 	echo "Loading vsapp..."
+	/usr/sbin/vsapp
+	exit 0
+	;;
+  stop)
+	echo "removing vsapp not implemented yet..."
+	exit 1
+	;;
+  *)
+	echo "vsapp: unrecognized option $1"
+	echo "Usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+
